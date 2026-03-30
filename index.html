@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Naveen Palle | Embedded Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naveen Palle — Embedded Engineer</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0f172a;
+  color:#e2e8f0;
+  line-height:1.6;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px;
-      background: #020617;
-      position: sticky;
-      top: 0;
-    }
+nav {
+  position:fixed;
+  width:100%;
+  top:0;
+  background:#020617;
+  padding:15px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
 
-    nav a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav a {
+  color:#38bdf8;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 50px 20px;
-    }
+section {
+  max-width:900px;
+  margin:auto;
+  padding:80px 20px;
+}
 
-    h1, h2 {
-      color: #38bdf8;
-    }
+h1,h2,h3 { color:#38bdf8; }
 
-    .card {
-      background: #020617;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
+.card {
+  background:#020617;
+  padding:20px;
+  margin:15px 0;
+  border-radius:10px;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #38bdf8;
-      color: black;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-  </style>
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+@media(max-width:700px){
+  .grid { grid-template-columns:1fr; }
+}
+</style>
 </head>
 
 <body>
@@ -64,61 +63,135 @@
 <nav>
   <a href="#home">Home</a>
   <a href="#about">About</a>
+  <a href="#strengths">Strengths</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section id="home">
   <h1>Naveen Palle</h1>
-  <h2>Embedded Firmware Engineer</h2>
+  <h2>Senior Embedded Firmware Engineer</h2>
+
   <p>
-    I design and develop robust embedded systems with expertise in STM32, ESP32,
-    RTOS, and hardware-software integration.
+  I design and deliver production-grade embedded systems across railway, medical, and industrial domains.
+  From low-level drivers to RTOS-based architectures and FOTA pipelines — I build reliable firmware
+  that works in real-world conditions.
   </p>
+
+  <p><strong>4+ Years Experience | STM32 | ESP32 | RTOS | Communication Protocols</strong></p>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
+
   <p>
-    Embedded Firmware Developer with 3+ years of experience working on real-time
-    systems, communication protocols, and firmware architecture.
+  I am a Senior Embedded Developer with 4+ years of experience building production-grade firmware
+  across railway, medical, and industrial automation domains.
   </p>
+
   <p>
-    Worked across medical, locomotive, and automation industries delivering
-    reliable embedded solutions.
+  My expertise lies in RTOS-based system design, bootloader development, and low-level driver
+  implementation for ARM-based systems. I have led multiple projects end-to-end — from hardware bring-up
+  to field deployment.
   </p>
+
+  <p>
+  I specialize in solving real-world embedded challenges such as unreliable networks,
+  memory constraints, and complex communication systems.
+  </p>
+
+  <p>
+  I work at the intersection of hardware and firmware — debugging signals one moment
+  and optimizing Embedded C the next.
+  </p>
+</section>
+
+<section id="strengths">
+  <h2>Key Strengths</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Firmware Architecture</h3>
+      <p>Designing scalable firmware using RTOS, modular drivers, and efficient memory handling.</p>
+    </div>
+
+    <div class="card">
+      <h3>Hardware Integration</h3>
+      <p>Strong experience debugging real hardware using oscilloscopes and logic analyzers.</p>
+    </div>
+
+    <div class="card">
+      <h3>Communication Systems</h3>
+      <p>Expert in UART, SPI, I2C, CAN, TCP/IP for reliable communication.</p>
+    </div>
+
+    <div class="card">
+      <h3>System Reliability</h3>
+      <p>Focus on fail-safe design, network fallback, and robust field performance.</p>
+    </div>
+
+  </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
 
   <div class="card">
-    <h3>ESP32 Audio System</h3>
-    <p>MP3 decoding, DAC output, EQ control, analog effects integration.</p>
+    <h3>Digital Gauge Cluster — Indian Railways (V2)</h3>
+    <p>
+    Designed a high-performance embedded system with LVDS display, eMMC storage, and SDRAM support
+    for real-time UI rendering.
+    </p>
+    <p><strong>Impact:</strong> Improved boot time, responsiveness, and system scalability.</p>
+  </div>
+
+  <div class="card">
+    <h3>Digital Gauge Cluster — V1</h3>
+    <p>
+    Developed multi-sensor pressure monitoring system with real-time display and SD logging.
+    </p>
+    <p><strong>Impact:</strong> Enabled real-time monitoring and field diagnostics.</p>
+  </div>
+
+  <div class="card">
+    <h3>Package Integrity Tester</h3>
+    <p>
+    Built vacuum-based leak detection system for medical packaging with automated reporting.
+    </p>
+    <p><strong>Impact:</strong> Ensured compliance with medical standards.</p>
+  </div>
+
+  <div class="card">
+    <h3>Sieve Shaker System</h3>
+    <p>
+    Developed industrial system using electromagnetic control and zero-cross detection.
+    </p>
+    <p><strong>Impact:</strong> Improved process automation and repeatability.</p>
   </div>
 
   <div class="card">
     <h3>BLE FOTA System</h3>
-    <p>Firmware updates over BLE with retry and fail-safe mechanisms.</p>
-  </div>
-
-  <div class="card">
-    <h3>Firmware Porting (NRF → ESP32)</h3>
-    <p>Full firmware migration with RTOS and BLE stack adaptation.</p>
-  </div>
-
-  <div class="card">
-    <h3>SDRAM Migration</h3>
-    <p>Memory interface debugging and configuration optimization.</p>
+    <p>
+    Implemented firmware update system over BLE with retry and fail-safe logic.
+    </p>
+    <p><strong>Impact:</strong> Eliminated need for manual firmware updates.</p>
   </div>
 
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: your-email@example.com</p>
+
+  <p>
+  Open to full-time roles, contract firmware work, and challenging embedded projects.
+  </p>
+
+  <p>Email: Naveengoudpalle7@gmail.com</p>
+  <p>Phone: +91 9848316639</p>
   <p>GitHub: your-github-link</p>
   <p>LinkedIn: your-linkedin-link</p>
+
 </section>
 
 </body>
