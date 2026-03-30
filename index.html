@@ -6,6 +6,10 @@
 <title>Naveen Palle | Embedded Engineer</title>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin:0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -25,23 +29,36 @@ nav {
   justify-content:center;
   gap:30px;
   padding:15px;
+  z-index:1000;
 }
 
 nav a {
   text-decoration:none;
   color:#6b7280;
   font-size:14px;
+  position:relative;
 }
 
+nav a.active,
 nav a:hover {
   color:#111827;
+}
+
+nav a.active::after {
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:100%;
+  height:2px;
+  background:#2563eb;
 }
 
 /* LAYOUT */
 section {
   max-width:900px;
   margin:auto;
-  padding:90px 20px;
+  padding:100px 20px;
 }
 
 h1 {
@@ -85,15 +102,46 @@ p {
   border-radius:8px;
   padding:20px;
   background:#fafafa;
+  transition: all 0.2s ease;
 }
 
 .card:hover {
   border-color:#2563eb;
+  transform: translateY(-3px);
 }
 
-/* CONTACT */
-.contact p {
-  margin:5px 0;
+/* BUTTON */
+.btn {
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 16px;
+  background:#111827;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.btn:hover {
+  background:#2563eb;
+}
+
+/* BACK TO TOP */
+#topBtn {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:none;
+  padding:10px 14px;
+  background:#111827;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+#topBtn:hover {
+  background:#2563eb;
 }
 
 </style>
@@ -116,10 +164,10 @@ p {
 
   <p>
   I design and build reliable embedded systems across railway, medical, and industrial domains.
-  My work spans from low-level drivers to RTOS-based architectures and firmware update systems.
+  From low-level drivers to RTOS-based architectures and FOTA systems.
   </p>
 
-  <p><strong>STM32 • ESP32 • RTOS • Communication Protocols</strong></p>
+  <a href="#projects" class="btn">View Projects</a>
 </section>
 
 <!-- ABOUT -->
@@ -127,13 +175,13 @@ p {
   <h2>About</h2>
 
   <p>
-  Embedded Firmware Developer with 4+ years of experience developing production-grade systems.
-  Experienced in RTOS, bootloaders, and hardware-software integration.
+  Embedded Firmware Developer with 4+ years of experience building production-grade systems.
+  Specialized in RTOS, communication protocols, and hardware-software integration.
   </p>
 
   <p>
-  I focus on solving real-world problems like unreliable communication, memory constraints,
-  and system stability in field conditions.
+  I focus on solving real-world problems such as network failures, memory optimization,
+  and system reliability in field deployments.
   </p>
 </section>
 
@@ -144,12 +192,12 @@ p {
   <div class="grid">
     <div class="card">
       <h3>Firmware Architecture</h3>
-      <p>RTOS-based scalable and modular firmware design.</p>
+      <p>RTOS-based modular firmware design.</p>
     </div>
 
     <div class="card">
       <h3>Hardware Integration</h3>
-      <p>Strong debugging using oscilloscope and logic analyzer.</p>
+      <p>Debugging with oscilloscope and logic analyzer.</p>
     </div>
 
     <div class="card">
@@ -159,7 +207,7 @@ p {
 
     <div class="card">
       <h3>Reliability</h3>
-      <p>Fail-safe design and robust field performance.</p>
+      <p>Fail-safe and robust embedded design.</p>
     </div>
   </div>
 </section>
@@ -170,40 +218,70 @@ p {
 
   <div class="card">
     <h3>Digital Gauge Cluster — Indian Railways</h3>
-    <p>High-performance system with LVDS, eMMC, SDRAM.</p>
-    <p><strong>Impact:</strong> Improved boot speed and responsiveness.</p>
+    <p>High-performance embedded system with LVDS, eMMC, SDRAM.</p>
+    <p><strong>Impact:</strong> Improved responsiveness and system scalability.</p>
   </div>
 
   <div class="card">
     <h3>Package Integrity Tester</h3>
     <p>Medical leak detection system with automated reporting.</p>
-    <p><strong>Impact:</strong> Ensured compliance and reliability.</p>
   </div>
 
   <div class="card">
     <h3>Sieve Shaker System</h3>
-    <p>Industrial automation using electromagnetic control.</p>
-    <p><strong>Impact:</strong> Improved process efficiency.</p>
+    <p>Industrial automation system using electromagnetic control.</p>
   </div>
 
   <div class="card">
     <h3>BLE FOTA System</h3>
     <p>Firmware update system over BLE.</p>
-    <p><strong>Impact:</strong> Removed need for manual updates.</p>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section id="contact">
   <h2>Contact</h2>
 
   <p>Open to opportunities and embedded system projects.</p>
 
   <p>Email: Naveengoudpalle7@gmail.com</p>
   <p>Phone: +91 9848316639</p>
-  <p>GitHub: your-github-link</p>
-  <p>LinkedIn: your-linkedin-link</p>
 </section>
+
+<button id="topBtn">↑ Top</button>
+
+<script>
+// Active navbar highlight
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("active");
+    if (a.getAttribute("href") === "#" + current) {
+      a.classList.add("active");
+    }
+  });
+
+  // Top button
+  document.getElementById("topBtn").style.display =
+    window.scrollY > 300 ? "block" : "none";
+});
+
+// Scroll to top
+document.getElementById("topBtn").onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+</script>
 
 </body>
 </html>
