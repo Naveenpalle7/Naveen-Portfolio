@@ -3,58 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Naveen Palle — Embedded Engineer</title>
+<title>Naveen Palle | Embedded Engineer</title>
 
 <style>
 body {
   margin:0;
-  font-family: Arial, sans-serif;
-  background:#0f172a;
-  color:#e2e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background:#ffffff;
+  color:#111827;
   line-height:1.6;
 }
 
+/* NAVBAR */
 nav {
   position:fixed;
   width:100%;
   top:0;
-  background:#020617;
-  padding:15px;
+  background:#ffffff;
+  border-bottom:1px solid #e5e7eb;
   display:flex;
   justify-content:center;
   gap:30px;
+  padding:15px;
 }
 
 nav a {
-  color:#38bdf8;
   text-decoration:none;
-  font-weight:bold;
+  color:#6b7280;
+  font-size:14px;
 }
 
+nav a:hover {
+  color:#111827;
+}
+
+/* LAYOUT */
 section {
   max-width:900px;
   margin:auto;
-  padding:80px 20px;
+  padding:90px 20px;
 }
 
-h1,h2,h3 { color:#38bdf8; }
-
-.card {
-  background:#020617;
-  padding:20px;
-  margin:15px 0;
-  border-radius:10px;
+h1 {
+  font-size:42px;
+  margin-bottom:5px;
 }
 
+h2 {
+  font-size:26px;
+  margin-bottom:15px;
+}
+
+h3 {
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+p {
+  color:#4b5563;
+}
+
+/* HERO */
+.hero p {
+  max-width:600px;
+}
+
+/* GRID */
 .grid {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:15px;
+  gap:20px;
 }
 
 @media(max-width:700px){
   .grid { grid-template-columns:1fr; }
 }
+
+/* CARD */
+.card {
+  border:1px solid #e5e7eb;
+  border-radius:8px;
+  padding:20px;
+  background:#fafafa;
+}
+
+.card:hover {
+  border-color:#2563eb;
+}
+
+/* CONTACT */
+.contact p {
+  margin:5px 0;
+}
+
 </style>
 </head>
 
@@ -68,130 +109,100 @@ h1,h2,h3 { color:#38bdf8; }
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="home">
+<!-- HOME -->
+<section id="home" class="hero">
   <h1>Naveen Palle</h1>
-  <h2>Senior Embedded Firmware Engineer</h2>
+  <h2>Embedded Firmware Engineer</h2>
 
   <p>
-  I design and deliver production-grade embedded systems across railway, medical, and industrial domains.
-  From low-level drivers to RTOS-based architectures and FOTA pipelines — I build reliable firmware
-  that works in real-world conditions.
+  I design and build reliable embedded systems across railway, medical, and industrial domains.
+  My work spans from low-level drivers to RTOS-based architectures and firmware update systems.
   </p>
 
-  <p><strong>4+ Years Experience | STM32 | ESP32 | RTOS | Communication Protocols</strong></p>
+  <p><strong>STM32 • ESP32 • RTOS • Communication Protocols</strong></p>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-  <h2>About Me</h2>
+  <h2>About</h2>
 
   <p>
-  I am a Senior Embedded Developer with 4+ years of experience building production-grade firmware
-  across railway, medical, and industrial automation domains.
+  Embedded Firmware Developer with 4+ years of experience developing production-grade systems.
+  Experienced in RTOS, bootloaders, and hardware-software integration.
   </p>
 
   <p>
-  My expertise lies in RTOS-based system design, bootloader development, and low-level driver
-  implementation for ARM-based systems. I have led multiple projects end-to-end — from hardware bring-up
-  to field deployment.
-  </p>
-
-  <p>
-  I specialize in solving real-world embedded challenges such as unreliable networks,
-  memory constraints, and complex communication systems.
-  </p>
-
-  <p>
-  I work at the intersection of hardware and firmware — debugging signals one moment
-  and optimizing Embedded C the next.
+  I focus on solving real-world problems like unreliable communication, memory constraints,
+  and system stability in field conditions.
   </p>
 </section>
 
+<!-- STRENGTHS -->
 <section id="strengths">
   <h2>Key Strengths</h2>
 
   <div class="grid">
-
     <div class="card">
       <h3>Firmware Architecture</h3>
-      <p>Designing scalable firmware using RTOS, modular drivers, and efficient memory handling.</p>
+      <p>RTOS-based scalable and modular firmware design.</p>
     </div>
 
     <div class="card">
       <h3>Hardware Integration</h3>
-      <p>Strong experience debugging real hardware using oscilloscopes and logic analyzers.</p>
+      <p>Strong debugging using oscilloscope and logic analyzer.</p>
     </div>
 
     <div class="card">
-      <h3>Communication Systems</h3>
-      <p>Expert in UART, SPI, I2C, CAN, TCP/IP for reliable communication.</p>
+      <h3>Communication</h3>
+      <p>UART, SPI, I2C, CAN, TCP/IP expertise.</p>
     </div>
 
     <div class="card">
-      <h3>System Reliability</h3>
-      <p>Focus on fail-safe design, network fallback, and robust field performance.</p>
+      <h3>Reliability</h3>
+      <p>Fail-safe design and robust field performance.</p>
     </div>
-
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
 
   <div class="card">
-    <h3>Digital Gauge Cluster — Indian Railways (V2)</h3>
-    <p>
-    Designed a high-performance embedded system with LVDS display, eMMC storage, and SDRAM support
-    for real-time UI rendering.
-    </p>
-    <p><strong>Impact:</strong> Improved boot time, responsiveness, and system scalability.</p>
-  </div>
-
-  <div class="card">
-    <h3>Digital Gauge Cluster — V1</h3>
-    <p>
-    Developed multi-sensor pressure monitoring system with real-time display and SD logging.
-    </p>
-    <p><strong>Impact:</strong> Enabled real-time monitoring and field diagnostics.</p>
+    <h3>Digital Gauge Cluster — Indian Railways</h3>
+    <p>High-performance system with LVDS, eMMC, SDRAM.</p>
+    <p><strong>Impact:</strong> Improved boot speed and responsiveness.</p>
   </div>
 
   <div class="card">
     <h3>Package Integrity Tester</h3>
-    <p>
-    Built vacuum-based leak detection system for medical packaging with automated reporting.
-    </p>
-    <p><strong>Impact:</strong> Ensured compliance with medical standards.</p>
+    <p>Medical leak detection system with automated reporting.</p>
+    <p><strong>Impact:</strong> Ensured compliance and reliability.</p>
   </div>
 
   <div class="card">
     <h3>Sieve Shaker System</h3>
-    <p>
-    Developed industrial system using electromagnetic control and zero-cross detection.
-    </p>
-    <p><strong>Impact:</strong> Improved process automation and repeatability.</p>
+    <p>Industrial automation using electromagnetic control.</p>
+    <p><strong>Impact:</strong> Improved process efficiency.</p>
   </div>
 
   <div class="card">
     <h3>BLE FOTA System</h3>
-    <p>
-    Implemented firmware update system over BLE with retry and fail-safe logic.
-    </p>
-    <p><strong>Impact:</strong> Eliminated need for manual firmware updates.</p>
+    <p>Firmware update system over BLE.</p>
+    <p><strong>Impact:</strong> Removed need for manual updates.</p>
   </div>
-
 </section>
 
-<section id="contact">
+<!-- CONTACT -->
+<section id="contact" class="contact">
   <h2>Contact</h2>
 
-  <p>
-  Open to full-time roles, contract firmware work, and challenging embedded projects.
-  </p>
+  <p>Open to opportunities and embedded system projects.</p>
 
   <p>Email: Naveengoudpalle7@gmail.com</p>
   <p>Phone: +91 9848316639</p>
   <p>GitHub: your-github-link</p>
   <p>LinkedIn: your-linkedin-link</p>
-
 </section>
 
 </body>
