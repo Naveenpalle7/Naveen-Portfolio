@@ -219,52 +219,55 @@ p { color:#4b5563; }
     <h2>Digital Pressure Monitoring Cluster (V1 - MVP)</h2>
 
     <p>
-    Designed and developed a real-time embedded system for Indian Railways to monitor
-    pressure sensors and display gauge values with high responsiveness.
+    Designed and developed a real-time embedded system for railway applications to monitor
+    multiple pressure sensors and visualize data with high responsiveness and reliability.
     </p>
 
     <h3>Key Highlights</h3>
     <ul>
-      <li>STM32-based system with single-loop architecture (no RTOS)</li>
-      <li>Loop cycle: <strong>135 ms</strong> ensuring real-time updates</li>
+      <li>STM32-based embedded system with optimized single-loop architecture (no RTOS)</li>
+      <li>Deterministic loop cycle of <strong>135 ms</strong> for real-time performance</li>
       <li>Supports <strong>6 CAN-based pressure sensors</strong></li>
-      <li>Pressure range up to <strong>11 bar</strong></li>
-      <li>Data logging every <strong>3 seconds</strong> to SD card</li>
+      <li>Pressure monitoring up to <strong>11 bar</strong></li>
+      <li>Periodic data logging every <strong>3 seconds</strong> to SD card</li>
     </ul>
 
     <h3>Interfaces Used</h3>
     <ul>
       <li>CAN → Pressure sensors</li>
-      <li>UART → DWIN display</li>
-      <li>SPI → SD card</li>
-      <li>I2C → RTC</li>
+      <li>UART → Industrial HMI display</li>
+      <li>SPI → SD card storage</li>
+      <li>I2C → Real-time clock (RTC)</li>
+      <li>USB → Firmware update & data transfer</li>
     </ul>
 
     <h3>Features</h3>
     <ul>
       <li>Real-time pressure gauge visualization</li>
-      <li>Warning, error, and status messages</li>
-      <li>USB firmware update with fallback mechanism</li>
-      <li>USB data dump from SD card</li>
-      <li>Multi-function control using only 4 buttons</li>
+      <li>Warning, error, and system status indication</li>
+      <li>Robust USB firmware update with fallback mechanism</li>
+      <li>USB-based data extraction from SD card</li>
+      <li>Multi-function control using only 4 hardware buttons</li>
     </ul>
 
     <h3>Your Contribution</h3>
     <ul>
-      <li>Designed complete firmware architecture</li>
-      <li>Implemented CAN communication for 6 sensors</li>
-      <li>Developed multi-function button logic (single-button sequences)</li>
-      <li>Handled SD logging and USB data transfer</li>
-      <li>Optimized loop timing to achieve 135 ms response</li>
+      <li>Designed complete firmware architecture and system flow</li>
+      <li>Implemented CAN communication for multi-node sensor network</li>
+      <li>Developed advanced multi-function button handling logic</li>
+      <li>Integrated SD card logging and USB data transfer</li>
+      <li>Optimized execution timing to achieve deterministic 135 ms loop</li>
     </ul>
 
     <h3>System Architecture</h3>
-    <img src="assets/architecture.png" alt="System Architecture Diagram" class="project-img" />
+    <img src="assets/architecture_1.png" alt="System Architecture Diagram" class="project-img" />
 
     <h3>Hardware Prototype</h3>
-    <img src="https://via.placeholder.com/600x300?text=Your+Hardware+Image" class="project-img" />
+    <img src="https://via.placeholder.com/600x300?text=Hardware+Prototype" class="project-img" />
 
-    <p><strong>Impact:</strong> Achieved real-time responsiveness and reliable field operation in railway environment.</p>
+    <p><strong>Impact:</strong> Delivered a reliable real-time monitoring system with stable field performance under industrial conditions.</p>
+
+    <p><em>Note: Certain hardware and vendor-specific details are abstracted due to confidentiality.</em></p>
 
   </div>
 </div>
