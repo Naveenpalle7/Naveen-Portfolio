@@ -39,7 +39,7 @@ nav a.active, nav a:hover {
   color:#111827;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
   max-width:900px;
   margin:auto;
@@ -48,7 +48,6 @@ section {
 
 h1 { font-size:40px; }
 h2 { font-size:26px; margin-bottom:15px; }
-h3 { margin-top:15px; }
 p { color:#4b5563; }
 
 /* BUTTON */
@@ -99,30 +98,28 @@ p { color:#4b5563; }
   background:rgba(0,0,0,0.5);
   justify-content:center;
   align-items:center;
-  padding:20px;
 }
 
 .modal-content {
   background:#fff;
   padding:25px;
-  max-width:700px;
-  max-height:90%;
-  overflow:auto;
+  max-width:650px;
   border-radius:8px;
+  overflow-y:auto;
+  max-height:90vh;
 }
 
 .close {
   float:right;
   cursor:pointer;
   font-weight:bold;
-  font-size:20px;
 }
 
 /* IMAGE */
-.modal-content img {
+.project-img {
   width:100%;
-  margin-top:10px;
   border-radius:6px;
+  margin:10px 0;
 }
 
 /* TOP BUTTON */
@@ -159,8 +156,8 @@ p { color:#4b5563; }
   <h2>Embedded Firmware Engineer</h2>
 
   <p>
-  I design and build reliable embedded systems across railway, medical, and industrial domains,
-  focusing on firmware architecture, communication systems, and real-world robustness.
+  I build reliable embedded systems across railway, medical, and industrial domains,
+  focusing on real-time performance, communication systems, and field reliability.
   </p>
 
   <a href="#projects" class="btn">View Projects</a>
@@ -173,12 +170,12 @@ p { color:#4b5563; }
 
   <p>
   Embedded Firmware Developer with 4+ years of experience delivering production-grade systems.
-  Specialized in STM32, RTOS, communication protocols, and hardware integration.
+  Specialized in firmware architecture, communication protocols, and hardware integration.
   </p>
 
   <p>
-  I focus on solving real-world challenges such as unreliable networks, memory constraints,
-  and system stability in field deployments.
+  I focus on solving real-world challenges like network failures, memory constraints,
+  and reliable performance in deployed environments.
   </p>
 </section>
 
@@ -190,7 +187,7 @@ p { color:#4b5563; }
 
     <div class="card" onclick="openModal('proj1')">
       <h3>Digital Pressure Monitoring Cluster</h3>
-      <p>STM32-based real-time railway monitoring system.</p>
+      <p>STM32-based real-time system with CAN sensors and 135ms loop response.</p>
     </div>
 
     <div class="card" onclick="openModal('proj2')">
@@ -212,89 +209,89 @@ p { color:#4b5563; }
 
   <p>Email: Naveengoudpalle7@gmail.com</p>
   <p>Phone: +91 9848316639</p>
-  <p>GitHub: your-link</p>
-  <p>LinkedIn: your-link</p>
 </section>
 
-<!-- PROJECT 1 MODAL -->
+<!-- MODAL: PROJECT 1 -->
 <div id="proj1" class="modal">
   <div class="modal-content">
-
     <span class="close" onclick="closeModal('proj1')">&times;</span>
 
-    <h2>Digital Pressure Monitoring Cluster — Indian Railways (V1 MVP)</h2>
+    <h2>Digital Pressure Monitoring Cluster (V1 - MVP)</h2>
 
     <p>
-    Designed and developed a real-time pressure monitoring cluster using STM32,
-    capable of handling multiple sensors over CAN and displaying live data with minimal latency.
+    Designed and developed a real-time embedded system for Indian Railways to monitor
+    pressure sensors and display gauge values with high responsiveness.
     </p>
 
-    <hr>
+    <h3>Key Highlights</h3>
+    <ul>
+      <li>STM32-based system with single-loop architecture (no RTOS)</li>
+      <li>Loop cycle: <strong>135 ms</strong> ensuring real-time updates</li>
+      <li>Supports <strong>6 CAN-based pressure sensors</strong></li>
+      <li>Pressure range up to <strong>11 bar</strong></li>
+      <li>Data logging every <strong>3 seconds</strong> to SD card</li>
+    </ul>
+
+    <h3>Interfaces Used</h3>
+    <ul>
+      <li>CAN → Pressure sensors</li>
+      <li>UART → DWIN display</li>
+      <li>SPI → SD card</li>
+      <li>I2C → RTC</li>
+    </ul>
+
+    <h3>Features</h3>
+    <ul>
+      <li>Real-time pressure gauge visualization</li>
+      <li>Warning, error, and status messages</li>
+      <li>USB firmware update with fallback mechanism</li>
+      <li>USB data dump from SD card</li>
+      <li>Multi-function control using only 4 buttons</li>
+    </ul>
+
+    <h3>Your Contribution</h3>
+    <ul>
+      <li>Designed complete firmware architecture</li>
+      <li>Implemented CAN communication for 6 sensors</li>
+      <li>Developed multi-function button logic (single-button sequences)</li>
+      <li>Handled SD logging and USB data transfer</li>
+      <li>Optimized loop timing to achieve 135 ms response</li>
+    </ul>
 
     <h3>System Architecture</h3>
-    <ul>
-      <li>STM32 MCU (Main Controller)</li>
-      <li>6 Pressure Sensors via CAN</li>
-      <li>DWIN Display via UART</li>
-      <li>SD Card via SPI</li>
-      <li>RTC via I2C</li>
-      <li>USB for firmware update & data dump</li>
-    </ul>
+    <img src="https://via.placeholder.com/600x300?text=Architecture+Diagram" class="project-img" />
 
-    <h3>Engineering Highlights</h3>
-    <ul>
-      <li>~135 ms loop cycle without RTOS</li>
-      <li>Handled CAN, UART, SPI, I2C in single loop</li>
-      <li>Multi-function button logic (4 buttons)</li>
-      <li>Data logging every 3 seconds</li>
-    </ul>
+    <h3>Hardware Prototype</h3>
+    <img src="https://via.placeholder.com/600x300?text=Your+Hardware+Image" class="project-img" />
 
-    <h3>Challenges & Solutions</h3>
-    <p><strong>Multi-interface without RTOS:</strong> Designed deterministic master loop</p>
-    <p><strong>Limited UI:</strong> Implemented sequence-based button control</p>
-    <p><strong>Firmware safety:</strong> Added fallback mechanism</p>
-
-    <h3>Impact</h3>
-    <ul>
-      <li>Real-time railway monitoring</li>
-      <li>Improved fault visibility</li>
-      <li>Reduced maintenance effort</li>
-    </ul>
-
-    <h3>Images</h3>
-    <img src="https://via.placeholder.com/600x300?text=System+Overview">
-    <img src="https://via.placeholder.com/600x300?text=Display+UI">
-    <img src="https://via.placeholder.com/600x300?text=Hardware+Setup">
+    <p><strong>Impact:</strong> Achieved real-time responsiveness and reliable field operation in railway environment.</p>
 
   </div>
 </div>
 
-<!-- PROJECT 2 -->
+<!-- OTHER MODALS -->
 <div id="proj2" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('proj2')">&times;</span>
     <h2>BLE FOTA System</h2>
-    <p>Implemented firmware updates over BLE with retry and fail-safe logic.</p>
+    <p>Implemented OTA updates over BLE with retry and fail-safe logic.</p>
   </div>
 </div>
 
-<!-- PROJECT 3 -->
 <div id="proj3" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('proj3')">&times;</span>
     <h2>Package Integrity Tester</h2>
-    <p>Developed a vacuum-based leak detection system for medical packaging.</p>
+    <p>Vacuum-based leak detection system for medical packaging.</p>
   </div>
 </div>
 
 <button id="topBtn">↑</button>
 
 <script>
-// MODAL
 function openModal(id){ document.getElementById(id).style.display="flex"; }
 function closeModal(id){ document.getElementById(id).style.display="none"; }
 
-// NAV ACTIVE + TOP BTN
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -318,7 +315,6 @@ window.addEventListener("scroll", () => {
     scrollY > 300 ? "block" : "none";
 });
 
-// TOP BTN
 document.getElementById("topBtn").onclick = () => {
   window.scrollTo({ top:0, behavior:"smooth" });
 };
