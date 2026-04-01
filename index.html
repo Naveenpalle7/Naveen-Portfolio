@@ -6,24 +6,21 @@
 <title>Naveen Palle | Embedded Engineer</title>
 
 <style>
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin:0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background:#ffffff;
   color:#111827;
-  line-height:1.6;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
   position:fixed;
   width:100%;
   top:0;
-  background:#ffffff;
+  background:#fff;
   border-bottom:1px solid #e5e7eb;
   display:flex;
   justify-content:center;
@@ -36,54 +33,35 @@ nav a {
   text-decoration:none;
   color:#6b7280;
   font-size:14px;
-  position:relative;
 }
 
-nav a.active,
-nav a:hover {
+nav a.active, nav a:hover {
   color:#111827;
 }
 
-nav a.active::after {
-  content:"";
-  position:absolute;
-  bottom:-5px;
-  left:0;
-  width:100%;
-  height:2px;
-  background:#2563eb;
-}
-
-/* LAYOUT */
+/* SECTIONS */
 section {
   max-width:900px;
   margin:auto;
   padding:100px 20px;
 }
 
-h1 {
-  font-size:42px;
-  margin-bottom:5px;
+h1 { font-size:40px; }
+h2 { font-size:26px; margin-bottom:15px; }
+p { color:#4b5563; }
+
+/* BUTTON */
+.btn {
+  display:inline-block;
+  padding:10px 16px;
+  background:#111827;
+  color:#fff;
+  border-radius:6px;
+  text-decoration:none;
+  margin-top:15px;
 }
 
-h2 {
-  font-size:26px;
-  margin-bottom:15px;
-}
-
-h3 {
-  font-size:18px;
-  margin-bottom:8px;
-}
-
-p {
-  color:#4b5563;
-}
-
-/* HERO */
-.hero p {
-  max-width:600px;
-}
+.btn:hover { background:#2563eb; }
 
 /* GRID */
 .grid {
@@ -99,50 +77,57 @@ p {
 /* CARD */
 .card {
   border:1px solid #e5e7eb;
-  border-radius:8px;
   padding:20px;
+  border-radius:8px;
   background:#fafafa;
-  transition: all 0.2s ease;
+  cursor:pointer;
+  transition:0.2s;
 }
 
 .card:hover {
   border-color:#2563eb;
-  transform: translateY(-3px);
+  transform:translateY(-3px);
 }
 
-/* BUTTON */
-.btn {
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 16px;
-  background:#111827;
-  color:white;
-  text-decoration:none;
-  border-radius:6px;
-  font-size:14px;
+/* MODAL */
+.modal {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.5);
+  justify-content:center;
+  align-items:center;
 }
 
-.btn:hover {
-  background:#2563eb;
+.modal-content {
+  background:#fff;
+  padding:25px;
+  max-width:600px;
+  border-radius:8px;
 }
 
-/* BACK TO TOP */
+.close {
+  float:right;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* TOP BUTTON */
 #topBtn {
   position:fixed;
   bottom:20px;
   right:20px;
   display:none;
-  padding:10px 14px;
   background:#111827;
   color:white;
   border:none;
+  padding:10px;
   border-radius:6px;
   cursor:pointer;
 }
 
-#topBtn:hover {
-  background:#2563eb;
-}
+#topBtn:hover { background:#2563eb; }
 
 </style>
 </head>
@@ -152,22 +137,22 @@ p {
 <nav>
   <a href="#home">Home</a>
   <a href="#about">About</a>
-  <a href="#strengths">Strengths</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- HOME -->
-<section id="home" class="hero">
+<section id="home">
   <h1>Naveen Palle</h1>
   <h2>Embedded Firmware Engineer</h2>
 
   <p>
-  I design and build reliable embedded systems across railway, medical, and industrial domains.
-  From low-level drivers to RTOS-based architectures and FOTA systems.
+  I build reliable embedded systems across railway, medical, and industrial domains,
+  focusing on RTOS, communication systems, and real-world robustness.
   </p>
 
   <a href="#projects" class="btn">View Projects</a>
+  <a href="resume.pdf" class="btn">Download Resume</a>
 </section>
 
 <!-- ABOUT -->
@@ -175,66 +160,37 @@ p {
   <h2>About</h2>
 
   <p>
-  Embedded Firmware Developer with 4+ years of experience building production-grade systems.
-  Specialized in RTOS, communication protocols, and hardware-software integration.
+  Embedded Firmware Developer with 4+ years of experience delivering production-grade systems.
+  Specialized in RTOS, firmware architecture, and hardware integration.
   </p>
 
   <p>
-  I focus on solving real-world problems such as network failures, memory optimization,
+  I focus on solving real-world challenges like network failures, memory constraints,
   and system reliability in field deployments.
   </p>
-</section>
-
-<!-- STRENGTHS -->
-<section id="strengths">
-  <h2>Key Strengths</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Firmware Architecture</h3>
-      <p>RTOS-based modular firmware design.</p>
-    </div>
-
-    <div class="card">
-      <h3>Hardware Integration</h3>
-      <p>Debugging with oscilloscope and logic analyzer.</p>
-    </div>
-
-    <div class="card">
-      <h3>Communication</h3>
-      <p>UART, SPI, I2C, CAN, TCP/IP expertise.</p>
-    </div>
-
-    <div class="card">
-      <h3>Reliability</h3>
-      <p>Fail-safe and robust embedded design.</p>
-    </div>
-  </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
 
-  <div class="card">
-    <h3>Digital Gauge Cluster — Indian Railways</h3>
-    <p>High-performance embedded system with LVDS, eMMC, SDRAM.</p>
-    <p><strong>Impact:</strong> Improved responsiveness and system scalability.</p>
-  </div>
+  <div class="grid">
 
-  <div class="card">
-    <h3>Package Integrity Tester</h3>
-    <p>Medical leak detection system with automated reporting.</p>
-  </div>
+    <div class="card" onclick="openModal('proj1')">
+      <h3>Digital Gauge Cluster</h3>
+      <p>Railway embedded system with high-speed display.</p>
+    </div>
 
-  <div class="card">
-    <h3>Sieve Shaker System</h3>
-    <p>Industrial automation system using electromagnetic control.</p>
-  </div>
+    <div class="card" onclick="openModal('proj2')">
+      <h3>BLE FOTA System</h3>
+      <p>Firmware update over BLE.</p>
+    </div>
 
-  <div class="card">
-    <h3>BLE FOTA System</h3>
-    <p>Firmware update system over BLE.</p>
+    <div class="card" onclick="openModal('proj3')">
+      <h3>Package Integrity Tester</h3>
+      <p>Medical leak detection system.</p>
+    </div>
+
   </div>
 </section>
 
@@ -242,44 +198,73 @@ p {
 <section id="contact">
   <h2>Contact</h2>
 
-  <p>Open to opportunities and embedded system projects.</p>
-
   <p>Email: Naveengoudpalle7@gmail.com</p>
   <p>Phone: +91 9848316639</p>
+  <p>GitHub: your-link</p>
+  <p>LinkedIn: your-link</p>
 </section>
 
-<button id="topBtn">↑ Top</button>
+<!-- MODALS -->
+
+<div id="proj1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('proj1')">&times;</span>
+    <h2>Digital Gauge Cluster</h2>
+    <p>Designed a high-performance system with SDRAM, LVDS display, and fast boot.</p>
+    <p><strong>Impact:</strong> Improved responsiveness and scalability.</p>
+  </div>
+</div>
+
+<div id="proj2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('proj2')">&times;</span>
+    <h2>BLE FOTA System</h2>
+    <p>Implemented OTA updates over BLE with retry and fail-safe logic.</p>
+  </div>
+</div>
+
+<div id="proj3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('proj3')">&times;</span>
+    <h2>Package Integrity Tester</h2>
+    <p>Vacuum-based leak detection system for medical packaging.</p>
+  </div>
+</div>
+
+<button id="topBtn">↑</button>
 
 <script>
-// Active navbar highlight
+// MODAL
+function openModal(id){ document.getElementById(id).style.display="flex"; }
+function closeModal(id){ document.getElementById(id).style.display="none"; }
+
+// NAV ACTIVE
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
   let current = "";
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute("id");
+  sections.forEach(sec => {
+    if(scrollY >= sec.offsetTop - 120){
+      current = sec.id;
     }
   });
 
   navLinks.forEach(a => {
     a.classList.remove("active");
-    if (a.getAttribute("href") === "#" + current) {
+    if(a.getAttribute("href") === "#" + current){
       a.classList.add("active");
     }
   });
 
-  // Top button
   document.getElementById("topBtn").style.display =
-    window.scrollY > 300 ? "block" : "none";
+    scrollY > 300 ? "block" : "none";
 });
 
-// Scroll to top
+// TOP BTN
 document.getElementById("topBtn").onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top:0, behavior:"smooth" });
 };
 </script>
 
