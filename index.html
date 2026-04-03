@@ -210,6 +210,7 @@ p { color:#4b5563; }
   <p>Email: Naveengoudpalle7@gmail.com</p>
   <p>Phone: +91 9848316639</p>
 </section>
+  
 
 <!-- MODAL: PROJECT 1 -->
 <div id="proj1" class="modal">
@@ -269,6 +270,79 @@ p { color:#4b5563; }
     <img src="assets/ae003_hardware_prototype_2.jpeg" alt="Hardware Prototype" class="project-img" />
     
     <p><strong>Impact:</strong> Delivered a reliable real-time monitoring system with stable field performance under industrial conditions.</p>
+
+    <p><em>Note: Certain hardware and vendor-specific details are abstracted due to confidentiality.</em></p>
+
+  </div>
+</div>
+
+  <div id="proj2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('proj2')">&times;</span>
+
+    <h2>Digital Pressure Monitoring Cluster – Advanced (V2)</h2>
+
+    <p>
+    Led the development of a next-generation embedded system evolving from a 
+    bare-metal architecture to a scalable RTOS-based platform with advanced GUI,
+    external memory, and industrial-grade reliability.
+    </p>
+
+    <h3>Key Improvements Over V1</h3>
+    <ul>
+      <li>FreeRTOS-based multitasking architecture</li>
+      <li>External QSPI Flash for application execution</li>
+      <li>External RAM for GUI and buffering</li>
+      <li>eMMC storage via SDMMC interface</li>
+      <li>LVDS-based high-resolution display with TouchGFX</li>
+      <li>Support for multiple sensor vendors with auto-detection</li>
+    </ul>
+
+    <h3>System Architecture</h3>
+    <ul>
+      <li>Internal Flash → Bootloader with fallback support</li>
+      <li>External Flash (QSPI) → Main firmware execution</li>
+      <li>External RAM → GUI rendering & runtime buffers</li>
+      <li>eMMC → Data logging</li>
+      <li>CAN / CAN-FD → Sensor communication</li>
+      <li>LVDS → Display interface</li>
+    </ul>
+
+    <img src="assets/architecture_2.png" class="project-img" />
+
+    <h3>Engineering Challenges</h3>
+    <ul>
+      <li>Executing firmware from external flash (QSPI)</li>
+      <li>Designing robust bootloader with fallback mechanism</li>
+      <li>Balancing RTOS tasks for GUI and communication</li>
+      <li>Integrating TouchGFX for high-performance UI</li>
+      <li>Handling multiple sensor protocols dynamically</li>
+      <li>Implementing reliable eMMC data storage</li>
+    </ul>
+
+    <h3>Your Role</h3>
+    <ul>
+      <li>Technical Lead for firmware architecture</li>
+      <li>Defined system design and memory layout</li>
+      <li>Led team development and task distribution</li>
+      <li>Handled complex modules (RTOS, memory, GUI)</li>
+      <li>Mentored team and resolved critical issues</li>
+    </ul>
+
+    <h3>Development & Hardware</h3>
+    <img src="assets/dev_photo_v2_1.jpeg" class="project-img" />
+    <img src="assets/dev_photo_v2_2.jpeg" class="project-img" />
+
+    <h3>V1 vs V2 Comparison</h3>
+    <ul>
+      <li>Architecture: Bare-metal → FreeRTOS</li>
+      <li>Storage: SD Card → eMMC</li>
+      <li>UI: Basic → Advanced GUI (TouchGFX)</li>
+      <li>Memory: Internal → External Flash + RAM</li>
+      <li>Scalability: Limited → High</li>
+    </ul>
+
+    <p><strong>Impact:</strong> Delivered a scalable, production-grade embedded system with improved UI, flexibility, and reliability.</p>
 
     <p><em>Note: Certain hardware and vendor-specific details are abstracted due to confidentiality.</em></p>
 
