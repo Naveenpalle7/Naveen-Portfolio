@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naveen Palle | Embedded Firmware Engineer</title>
+<meta name="description" content="Embedded firmware engineer with 4+ years building real-time systems for railway, medical and industrial products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e9ecef; --panel:#f6f7f9; --line:#cfd4da; --text:#1d242c; --muted:#56616e;
+  --accent:#0f766e; --accent-ink:#ffffff;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+p{color:var(--muted);margin:0 0 14px;max-width:62ch}
+
+/* NAV */
+header{position:sticky;top:0;z-index:20;background:rgba(233,236,239,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.brand{font-weight:600;text-decoration:none}
+nav{display:flex;gap:26px}
+nav a{text-decoration:none;color:var(--muted);font-size:14px;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.active{color:var(--text);border-color:var(--accent)}
+
+/* HERO */
+.hero{padding:88px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+h1{font-size:clamp(36px,5.2vw,56px);line-height:1.08;margin:0 0 10px;letter-spacing:-.02em;font-weight:600}
+.role{font-size:20px;color:var(--accent);margin:0 0 22px;font-weight:500}
+.hero p{font-size:17px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:500;font-size:15px;text-decoration:none;border:1px solid var(--line);transition:background .15s,border-color .15s}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary:hover{background:#115e59;border-color:#115e59}
+.btn:not(.primary):hover{border-color:var(--accent)}
+.shot{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{padding:10px 14px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+
+/* SECTIONS */
+section{padding:76px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;margin:0 0 28px;letter-spacing:-.01em;font-weight:600}
+h3{font-size:17px;margin:0 0 8px;font-weight:600}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:10px;margin-top:34px;background:var(--panel)}
+.facts div{padding:20px 22px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font:500 26px/1.2 var(--mono);color:var(--text)}
+.facts span{font-size:13px;color:var(--muted)}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.skills{display:grid;gap:14px}
+.skills div{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.skills dt{color:var(--muted)}
+.skills dd{margin:0}
+
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:24px;cursor:pointer;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card p{font-size:15px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{font-size:12px;padding:3px 9px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+.tag-status{font-size:12px;color:var(--accent);margin-bottom:8px}
+.more{margin-top:16px;font-size:14px;color:var(--accent)}
+
+/* DIALOG */
+dialog{width:min(780px,calc(100% - 32px));max-height:90vh;padding:0;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:12px}
+dialog::backdrop{background:rgba(29,36,44,.55)}
+.dlg{padding:32px}
+.dlg-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:12px}
+.dlg h2{margin:0;font-size:24px}
+.x{flex:none;background:none;border:1px solid var(--line);color:var(--text);width:36px;height:36px;border-radius:6px;font-size:20px;cursor:pointer}
+.x:hover{border-color:var(--accent)}
+.dlg h3{margin:28px 0 10px;color:var(--text)}
+.dlg ul{margin:0;padding-left:20px;color:var(--muted)}
+.dlg li{margin-bottom:6px}
+.dlg li strong{color:var(--text);font-weight:600}
+.dlg figure{margin:14px 0 0}
+.dlg img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block}
+.dlg figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.impact{margin-top:28px;padding:16px 18px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 8px 8px 0}
+.impact p{margin:0;color:var(--text)}
+.note{font-size:13px;margin-top:18px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:500}
+td{color:var(--text)}
+
+/* CONTACT */
+.contact a.big{display:block;font-size:clamp(20px,3vw,30px);font-weight:500;text-decoration:none;margin-bottom:6px}
+.contact a.big:hover{color:var(--accent)}
+footer{padding:28px 0;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+
+#topBtn{position:fixed;right:20px;bottom:20px;display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:18px;cursor:pointer}
+#topBtn:hover{border-color:var(--accent)}
+
+@media(max-width:820px){
+  .hero{padding:48px 0}
+  .hero .wrap,.about,.projects{grid-template-columns:1fr}
+  .hero .wrap{gap:36px}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  nav{gap:16px}
+  .dlg{padding:22px}
+}
+@media(max-width:420px){.brand{display:none}header .wrap{justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#home">Naveen Palle</a>
+    <nav aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero" style="border-top:0">
+  <div class="wrap">
+    <div>
+      <h1>Naveen Palle</h1>
+      <p class="role">Embedded Firmware Engineer</p>
+      <p>I build reliable embedded systems for railway, medical and industrial products, with a focus on real-time performance, communication protocols and behaviour in the field.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn" href="resume.pdf">Download resume</a>
+      </div>
+    </div>
+    <figure class="shot">
+      <img src="assets/ae003_hardware_prototype_1.jpeg" alt="Railway pressure monitoring display showing four gauges and alert panels" width="1152" height="864">
+      <figcaption>Digital Pressure Monitoring Cluster: live gauge display on the bench.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap">
+    <div class="facts" style="width:100%">
+      <div><b>4+</b><span>years in production firmware</span></div>
+      <div><b>135 ms</b><span>deterministic control loop</span></div>
+      <div><b>6</b><span>CAN pressure sensors per unit</span></div>
+      <div><b>3</b><span>domains: rail, medical, industrial</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>About</h2>
+      <p>Embedded firmware developer with 4+ years of experience delivering production-grade systems. I work across firmware architecture, communication protocols and hardware integration.</p>
+      <p>I like problems that show up after deployment: network failures, memory limits and devices that must keep working without anyone nearby to reset them.</p>
+    </div>
+    <dl class="skills" style="margin:0">
+      <div><dt>Controllers</dt><dd>STM32 (bare-metal and FreeRTOS)</dd></div>
+      <div><dt>Protocols</dt><dd>CAN, CAN-FD, UART, SPI, I2C, USB, BLE</dd></div>
+      <div><dt>Storage</dt><dd>SD card, eMMC, QSPI flash, external RAM</dd></div>
+      <div><dt>UI</dt><dd>Industrial HMI, TouchGFX, LVDS displays</dd></div>
+      <div><dt>System work</dt><dd>Bootloaders, firmware updates, fallback design</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="projects">
+      <button class="card" data-open="proj1">
+        <div class="tag-status">Railway · V1 (MVP)</div>
+        <h3>Digital Pressure Monitoring Cluster</h3>
+        <p>STM32 bare-metal system reading six CAN pressure sensors on a 135 ms loop, with SD logging and USB firmware update.</p>
+        <div class="tags"><span>STM32</span><span>CAN</span><span>UART HMI</span><span>USB DFU</span></div>
+        <div class="more">View details</div>
+      </button>
+      <button class="card" data-open="proj2">
+        <div class="tag-status">Railway · V2 (Advanced)</div>
+        <h3>Pressure Monitoring Cluster V2</h3>
+        <p>FreeRTOS platform with QSPI execution, external RAM, eMMC logging and a TouchGFX display. Led firmware architecture.</p>
+        <div class="tags"><span>FreeRTOS</span><span>TouchGFX</span><span>CAN-FD</span><span>QSPI</span></div>
+        <div class="more">View details</div>
+      </button>
+      <button class="card" data-open="proj3">
+        <div class="tag-status">Connectivity</div>
+        <h3>BLE FOTA System</h3>
+        <p>Over-the-air firmware updates over BLE with retry and fail-safe logic.</p>
+        <div class="tags"><span>BLE</span><span>OTA</span><span>Fail-safe</span></div>
+        <div class="more">View details</div>
+      </button>
+      <button class="card" data-open="proj4">
+        <div class="tag-status">Medical</div>
+        <h3>Package Integrity Tester</h3>
+        <p>Vacuum-based leak detection system for medical packaging.</p>
+        <div class="tags"><span>Medical</span><span>Leak detection</span></div>
+        <div class="more">View details</div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Open to embedded firmware roles and technical collaboration.</p>
+    <a class="big" href="mailto:Naveengoudpalle7@gmail.com">Naveengoudpalle7@gmail.com</a>
+    <a class="big" href="tel:+919848316639">+91 98483 16639</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">&copy; 2026 Naveen Palle</div></footer>
+
+<!-- PROJECT 1 -->
+<dialog id="proj1" aria-labelledby="t1">
+  <div class="dlg">
+    <div class="dlg-head"><h2 id="t1">Digital Pressure Monitoring Cluster (V1 MVP)</h2><button class="x" data-close aria-label="Close">&times;</button></div>
+    <p>A real-time embedded system for railway applications that monitors multiple pressure sensors and shows the readings with high responsiveness and reliability.</p>
+
+    <h3>Key highlights</h3>
+    <ul>
+      <li>STM32 with an optimised single-loop architecture and no RTOS</li>
+      <li>Deterministic loop cycle of <strong>135 ms</strong></li>
+      <li><strong>6 CAN-based pressure sensors</strong>, monitored up to <strong>11 bar</strong></li>
+      <li>Data logged to SD card every <strong>3 seconds</strong></li>
+    </ul>
+
+    <h3>Interfaces</h3>
+    <table>
+      <tr><th>Bus</th><th>Used for</th></tr>
+      <tr><td>CAN</td><td>Pressure sensors</td></tr>
+      <tr><td>UART</td><td>Industrial HMI display</td></tr>
+      <tr><td>SPI</td><td>SD card storage</td></tr>
+      <tr><td>I2C</td><td>Real-time clock</td></tr>
+      <tr><td>USB</td><td>Firmware update and data transfer</td></tr>
+    </table>
+
+    <h3>Features</h3>
+    <ul>
+      <li>Real-time pressure gauge visualisation</li>
+      <li>Warning, error and system status indication</li>
+      <li>USB firmware update with fallback mechanism</li>
+      <li>USB extraction of logged data from the SD card</li>
+      <li>Full control using only 4 hardware buttons</li>
+    </ul>
+
+    <h3>My contribution</h3>
+    <ul>
+      <li>Designed the complete firmware architecture and system flow</li>
+      <li>Implemented CAN communication for a multi-node sensor network</li>
+      <li>Developed the multi-function button handling logic</li>
+      <li>Integrated SD card logging and USB data transfer</li>
+      <li>Tuned execution timing to hold a deterministic 135 ms loop</li>
+    </ul>
+
+    <h3>System architecture</h3>
+    <figure><img src="assets/architecture_1.png" alt="System architecture diagram: six CAN pressure sensors feed an STM32 MCU with HMI, SD card, RTC and USB" loading="lazy"></figure>
+
+    <h3>Display and hardware</h3>
+    <figure><img src="assets/ae003_hardware_prototype_1.jpeg" alt="Display interface showing pressure gauges" loading="lazy"><figcaption>Display interface</figcaption></figure>
+    <figure><img src="assets/ae003_hardware_prototype_2.jpeg" alt="Hardware prototype board on a bench with ST-LINK programmer" loading="lazy"><figcaption>Hardware prototype on the bench</figcaption></figure>
+
+    <div class="impact"><p><strong>Impact:</strong> A reliable real-time monitoring system with stable field performance under industrial conditions.</p></div>
+    <p class="note">Certain hardware and vendor-specific details are abstracted due to confidentiality.</p>
+  </div>
+</dialog>
+
+<!-- PROJECT 2 -->
+<dialog id="proj2" aria-labelledby="t2">
+  <div class="dlg">
+    <div class="dlg-head"><h2 id="t2">Pressure Monitoring Cluster, Advanced (V2)</h2><button class="x" data-close aria-label="Close">&times;</button></div>
+    <p>The next generation of the cluster, moving from a bare-metal design to a scalable RTOS platform with an advanced GUI, external memory and industrial-grade reliability.</p>
+
+    <h3>Key improvements over V1</h3>
+    <ul>
+      <li>FreeRTOS multitasking architecture</li>
+      <li>External QSPI flash for application execution</li>
+      <li>External RAM for GUI and buffering</li>
+      <li>eMMC storage over SDMMC</li>
+      <li>High-resolution LVDS display with TouchGFX</li>
+      <li>Multiple sensor vendors with auto-detection</li>
+    </ul>
+
+    <h3>System architecture</h3>
+    <table>
+      <tr><th>Resource</th><th>Role</th></tr>
+      <tr><td>Internal flash</td><td>Bootloader with fallback support</td></tr>
+      <tr><td>External flash (QSPI)</td><td>Main firmware execution</td></tr>
+      <tr><td>External RAM</td><td>GUI rendering and runtime buffers</td></tr>
+      <tr><td>eMMC</td><td>Data logging</td></tr>
+      <tr><td>CAN / CAN-FD</td><td>Sensor communication</td></tr>
+      <tr><td>LVDS</td><td>Display interface</td></tr>
+    </table>
+
+    <h3>Engineering challenges</h3>
+    <ul>
+      <li>Executing firmware from external QSPI flash</li>
+      <li>Building a robust bootloader with a fallback mechanism</li>
+      <li>Balancing RTOS tasks between GUI and communication</li>
+      <li>Integrating TouchGFX for a high-performance UI</li>
+      <li>Handling multiple sensor protocols dynamically</li>
+      <li>Implementing reliable eMMC data storage</li>
+    </ul>
+
+    <h3>My role</h3>
+    <ul>
+      <li>Technical lead for firmware architecture</li>
+      <li>Defined system design and memory layout</li>
+      <li>Led team development and task distribution</li>
+      <li>Owned the complex modules: RTOS, memory and GUI</li>
+      <li>Mentored the team and resolved critical issues</li>
+    </ul>
+
+    <h3>V1 vs V2</h3>
+    <table>
+      <tr><th></th><th>V1</th><th>V2</th></tr>
+      <tr><td>Architecture</td><td>Bare-metal</td><td>FreeRTOS</td></tr>
+      <tr><td>Storage</td><td>SD card</td><td>eMMC</td></tr>
+      <tr><td>UI</td><td>Basic</td><td>TouchGFX</td></tr>
+      <tr><td>Memory</td><td>Internal</td><td>External flash and RAM</td></tr>
+      <tr><td>Scalability</td><td>Limited</td><td>High</td></tr>
+    </table>
+
+    <div class="impact"><p><strong>Impact:</strong> A scalable, production-grade system with a better UI, more flexibility and improved reliability.</p></div>
+    <p class="note">Certain hardware and vendor-specific details are abstracted due to confidentiality.</p>
+  </div>
+</dialog>
+
+<!-- PROJECT 3 -->
+<dialog id="proj3" aria-labelledby="t3">
+  <div class="dlg">
+    <div class="dlg-head"><h2 id="t3">BLE FOTA System</h2><button class="x" data-close aria-label="Close">&times;</button></div>
+    <p>Implemented over-the-air firmware updates over BLE with retry and fail-safe logic, so an interrupted update never leaves a device unusable.</p>
+  </div>
+</dialog>
+
+<!-- PROJECT 4 -->
+<dialog id="proj4" aria-labelledby="t4">
+  <div class="dlg">
+    <div class="dlg-head"><h2 id="t4">Package Integrity Tester</h2><button class="x" data-close aria-label="Close">&times;</button></div>
+    <p>A vacuum-based leak detection system for medical packaging.</p>
+  </div>
+</dialog>
+
+<button id="topBtn" aria-label="Back to top">&uarr;</button>
+
+<script>
+document.querySelectorAll("[data-open]").forEach(b =>
+  b.addEventListener("click", () => document.getElementById(b.dataset.open).showModal()));
+document.querySelectorAll("dialog").forEach(d => {
+  d.addEventListener("click", e => { if (e.target === d || e.target.closest("[data-close]")) d.close(); });
+});
+
+const sections = document.querySelectorAll("main section");
+const links = document.querySelectorAll("nav a");
+const topBtn = document.getElementById("topBtn");
+addEventListener("scroll", () => {
+  let cur = "home";
+  sections.forEach(s => { if (scrollY >= s.offsetTop - 140) cur = s.id; });
+  links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+  topBtn.style.display = scrollY > 400 ? "block" : "none";
+}, { passive: true });
+topBtn.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+</script>
+</body>
+</html>
